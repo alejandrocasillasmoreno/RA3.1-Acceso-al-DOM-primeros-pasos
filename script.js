@@ -1,4 +1,4 @@
-// Esperar a que el DOM esté completamente cargado antes de manipular elementos
+// Espera a que el DOM esté completamente cargado antes de manipular elementos
 document.addEventListener("DOMContentLoaded", function() {
 
     // EJERCICIO 1
@@ -16,11 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
         textos[i].style.backgroundColor = "gray";
     }
 
+    
     // EJERCICIO 3
     // Seleccionar el primer elemento con la clase .caja y cambiar borde/fondo
     const primeraCaja = document.querySelector(".caja");
     primeraCaja.style.border = "2px solid red";
     primeraCaja.style.backgroundColor = "lightyellow";
+
 
     // EJERCICIO 4
     // Actualizar el texto de todos los botones con la clase .btn-dom
@@ -448,7 +450,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     clon.classList.remove("bg-success");
                     clon.classList.add("bg-danger");
 
-                    // Reasignar el evento de eliminar al botón del clon (los listeners no se clonan)
+                    // Reasignar el evento de eliminar al botón del clon
                     const btnEliminarClon = clon.querySelector(".btn-eliminar-card");
                     btnEliminarClon.addEventListener("click", () => {
                         clon.remove();
