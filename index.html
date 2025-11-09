@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Ejercicios de DOM para practicar JavaScript" />
+    <title>Ejercicios DOM y JSON</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    
+</head>
+<body class="p-4">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <div class="container">
+        
+        <h1 class="text-primary mb-4">RA3.1 AEE. Manipulación del DOM y Datos JSON</h1>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h2 id="titulo">Página</h2>
+            <p class="lead" id="parrafo1">Esta es una página de ejemplo para practicar JavaScript (Ejercicio 1).</p>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.2 - getElementsByClassName</h3>
+            <p class="texto">Párrafo 1</p>
+            <p class="texto">Párrafo 2</p>
+            <p class="texto">Párrafo 3</p>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.3 - querySelector</h3>
+            <div class="caja p-3">
+                <p>Contenido en caja</p>
+            </div>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.4 - querySelectorAll</h3>
+            <button class="btn btn-outline-primary btn-dom me-1">Botón A</button>
+            <button class="btn btn-outline-primary btn-dom me-1">Botón B</button>
+            <button class="btn btn-outline-primary btn-dom">Botón C</button>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.5 - Colecciones vivas vs estáticas</h3>
+            <ul id="lista" class="list-group">
+                <li class="list-group-item">Elemento LI 1</li>
+                <li class="list-group-item">Elemento LI 2</li>
+            </ul>
+            <button id="add-lista" class="btn btn-sm btn-secondary mt-2">Añadir li (y mostrar diferencias en consola)</button>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.6 - createElement + appendChild</h3>
+            <button id="crear-p" class="btn btn-sm btn-success">Crear párrafo dinámico</button>
+            <div id="area-ej6" class="mt-2"></div>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.7 - createTextNode</h3>
+            <div id="contenedor" class="border p-2"></div>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.8 - Imagen con setAttribute</h3>
+            <div id="imagen-construida"></div>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.9 - Card dinámica</h3>
+            <div id="card-area"></div>
+            <button id="crear-card" class="btn btn-primary mt-2">Crear Card</button>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.10 - append / prepend / before / after</h3>
+            <ul id="posLista" class="list-group mb-3">
+                <li class="list-group-item">Base 1</li>
+                <li class="list-group-item">Base 2</li>
+            </ul>
+            <button id="pos-append" class="btn btn-sm btn-outline-primary me-1">append (dentro, al final)</button>
+            <button id="pos-prepend" class="btn btn-sm btn-outline-primary me-1">prepend (dentro, al inicio)</button>
+            <button id="pos-before" class="btn btn-sm btn-outline-secondary me-1">before (fuera, antes)</button>
+            <button id="pos-after" class="btn btn-sm btn-outline-secondary">after (fuera, después)</button>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.11 - remove() y replaceWith()</h3>
+            <p id="para-eliminar" class="alert alert-info">Párrafo a eliminar o reemplazar</p>
+            <button id="btn-eliminar" class="btn btn-danger btn-sm me-1">Eliminar</button>
+            <button id="btn-reemplazar" class="btn btn-warning btn-sm">Reemplazar</button>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.12 - Clonar tarjeta</h3>
+            <div id="card-clonar" class="card" style="width: 18rem;">
+                <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="demo">
+                <div class="card-body">
+                    <h5 class="card-title">Tarjeta Original</h5>
+                    <p class="card-text">Texto original</p>
+                </div>
+            </div>
+            <button id="clonar-card" class="btn btn-sm btn-outline-primary mt-2">Clonar Tarjeta</button>
+            <div id="clones" class="mt-2 d-flex gap-2 flex-wrap"></div>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.13/14 - Añadir y eliminar último</h3>
+            <button id="agregar-elemento" class="btn btn-sm btn-success me-1">Agregar elemento</button>
+            <button id="eliminar-ultimo" class="btn btn-sm btn-danger">Eliminar último</button>
+            <ul id="lista-din" class="mt-2 list-group"></ul>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.15 - Numerar items</h3>
+            <ul id="num-list" class="list-group">
+                <li class="list-group-item item">Elemento</li>
+                <li class="list-group-item item">Elemento</li>
+                <li class="list-group-item item">Elemento</li>
+            </ul>
+            <button id="numerar" class="btn btn-sm btn-info mt-2">Numerar</button>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.16 - Galería desde array local</h3>
+            <div id="galeria" class="row g-2"></div>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.17/18 - Mostrar usuarios (fetch)</h3>
+            <button id="fetch-users" class="btn btn-primary btn-sm me-1">Cargar usuarios (lista Ej.17)</button>
+            <button id="fetch-table" class="btn btn-secondary btn-sm">Cargar usuarios (tabla Ej.18)</button>
+            <div id="users-area" class="mt-2"></div>
+        </section>
+
+        <section class="mb-5 border-bottom pb-3">
+            <h3>Ej.19 - Filtrar .biz</h3>
+            <button id="fetch-biz" class="btn btn-outline-primary btn-sm">Mostrar usuarios .biz</button>
+            <div id="biz-area" class="mt-2 d-flex gap-2 flex-wrap"></div>
+        </section>
+
+        <section class="mb-5 pb-5">
+            <h3>Ej.20 - Mini visor interactivo</h3>
+            <button id="load-users" class="btn btn-success me-1">Cargar usuarios</button>
+            <button id="clone-last" class="btn btn-outline-secondary">Clonar último usuario mostrado</button>
+            <div id="visor" class="mt-2 d-flex flex-wrap gap-2"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
